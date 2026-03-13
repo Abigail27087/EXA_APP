@@ -1,14 +1,11 @@
 <ng-container *ngIf="router.url !== '/lista'"> 
   <!-- Solo muestra el formulario si NO estamos en la ruta '/lista' -->
   <form [formGroup]="miFormulario" class="form-contenedor"> 
-    <!-- Agregamos una clase para estilos -->
-    <label class="label-principal">Nombre de la Lista:</label> 
-    <!-- Etiqueta para el campo del nombre de la lista -->
-    <input formControlName="nombreLista" placeholder="Ej: Compras" class="input-nombre">
-    <!-- Campo de texto para el nombre de la lista con clase para estilos -->
+    <!-- Contenedor para el formulario con clase para estilos -->
+    <h2>Formulario de Estudiantes</h2>
     <hr class="separador">
-    <h3>Productos</h3>
-    <-- Título para la sección de productos -->
+    <h3>Estudiantes</h3>
+    <-- Nombre completo del Alumno -->
     <div formArrayName="items">
       <!-- Contenedor para el FormArray de productos -->
      <!-- Usamos *ngFor para iterar sobre los controles del FormArray -->
@@ -21,19 +18,37 @@
            <!-- Fila para cada producto con clase para estilos -->
         <!-- Campos para el nombre del producto y la cantidad, 
          con clases para estilos -->
-        <input formControlName="producto" placeholder="Nombre del producto" class="input-producto">
-        <!-- Campo para la cantidad del producto con clase para estilos -->
-        <input type="number" formControlName="cantidad" placeholder="Cant." class="input-cantidad">
-         <!-- Botón para eliminar el producto, con clase para estilos -->
+    
+          <!-- Campo para la matricula con clase para estilos -->
+        <input type="number" formControlName="Matricula" placeholder="Matricula" class="input-Matricula">
+          <!-- Campo para el nombre del alumno con clase para estilos -->
+        <input formControlName="Alumno" placeholder="Nombre del Alumno" class="input-Alumno">
+          <!-- Campo para la cantidad del producto con clase para estilos -->
+        <input formControlName="Apellidos" placeholder="Apellidos" class="input-Apellidos">
+          <!-- Campo para la carrera con clase para estilos -->
+        <input formControlName="Carrera" placeholder="Carrera" class="input-Carrera">
+         <!-- Campo para la cantidad del producto con clase para estilos -->
+        <input type="date" formControlName="FechaNacimiento" placeholder="Fecha de Nacimiento" class="input-FechaNacimiento">
+          <!-- Campo para la fecha de nacimiento con clase para estilos -->
+        <input formControlName="Genero" placeholder="Genero" class="input-Genero">
+          <!-- Campo para el genero con clase para estilos -->
+        <input type="number" formControlName="Cuatrimestre" placeholder="Cuatrimestre" class="input-Cuatrimestre">
+          <!-- Campo para el cuatrimestre con clase para estilos -->
+      
+        <input formControlName="Grupo" placeholder="Grupo" class="input-Grupo">
+          <!-- Campo para el grupo con clase para estilos -->
         <button type="button" (click)="eliminarItem(i)" class="btn-eliminar">
           &times; Eliminar
+        
+          <!-- Botón para editar el producto, con clase para estilos -->
         </button>
       </div>
     </div>
     <div class="acciones-finales">
       <!-- Botón para agregar un nuevo producto, con clase para estilos -->
       <button type="button" (click)="agregarItem()" class="btn-agregar">
-        + Agregar Producto
+        + Agregar Alumno
+        <!-- Botón para agregar un nuevo alumno, con clase para estilos -->
       </button>
       <br><br>
       <!-- Botón para ver la tabla, con clase para estilos -->

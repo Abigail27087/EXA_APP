@@ -81,3 +81,18 @@ h2 {
 .btn-regresar {
   border: 2px 
   solid #e7e7e7;}
+
+table{
+width:100%;
+border-collapse: collapse;
+}
+
+th, td{
+padding:10px;
+text-align:center;
+}
+
+th{
+background:#6a00ff;
+color:white;
+}

@@ -11,10 +11,10 @@ import{ RouterModule } from '@angular/router'; // Importa el
   selector: 'app-tabla-compras',
 imports:[CommonModule, RouterModule],
  standalone: true,
-  templateUrl: './tabla-compras.html',
-  styleUrl: './tabla-compras.css',
+  templateUrl: './tabla-estudiante.html',
+  styleUrl: './tabla-estudiante.css',
 })
-export class TablaCompras {
+export class Tablaestudiante {
 
 @Input() items: any[] = [];// Recibe la lista de compras desde
 //  el componente padre a través de Input
@@ -29,4 +29,14 @@ ngOnInit() {// Método que se ejecuta al inicializar el componente
     // Imprime la lista en la consola para verificar 
     // que se recibió correctamente
   }
+}
+export  interface estudiante {
+  Matricula: number;
+  Alumno: string;
+  Apellidos: string;
+  Carrera: string;
+  FechaNacimiento: Date;
+  Genero: string;
+  Cuatrimestre: number;
+  Grupo: string;
 }

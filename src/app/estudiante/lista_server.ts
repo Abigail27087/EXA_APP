@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 // disponible en toda la aplicación
 export class ListaService { // Aquí puedes agregar métodos para 
 // manejar la lista de compras
-  private datos: any[] = []; // Aquí almacenamos la lista de compras
+  private datos: any[] = []; // Aquí almacenamos la lista de estudiantes
 
   // Método para obtener la lista de compras actual
   actualizarLista(nuevaLista: any[]) { 
@@ -15,8 +15,15 @@ export class ListaService { // Aquí puedes agregar métodos para
     this.datos = nuevaLista; // Guardamos la nueva lista en el servicio
     // Actualizamos la lista con los nuevos datos
   }
-// Método para obtener la lista de compras actual
+  
+// Método para obtener la lista de estudiantes actual
   obtenerLista() {
     return this.datos; // Devolvemos la lista actual almacenada en el servicio
+  }
+
+  editarLista(indice: number, nuevoItem: any) {
+    if (indice >= 0 && indice < this.datos.length) {
+      this.datos[indice] = nuevoItem; // Actualizamos el item en la lista
+    }
   }
 }

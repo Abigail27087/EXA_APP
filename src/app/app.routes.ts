@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 // Importamos los componentes aquí
 //import { App } from './app';
-import { TablaCompras } from './tabla-compras/tabla-compras';
+import { Tablaestudiante} from './estudiante/tabla-estudiante';
  // Asegúrate de que esta ruta sea correcta según tu estructura de carpetas
 export const routes: Routes = [
 // Ruta para la tabla
-  { path: 'lista', component: TablaCompras },
+  { path: 'lista', component: Tablaestudiante },
   
   // Ruta raíz: NO le pongas component ni redirectTo. 
   // Al dejarla así, el <router-outlet> simplemente no cargará nada al inicio.

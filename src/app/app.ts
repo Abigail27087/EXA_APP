@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, FormArray, Validators, ReactiveFormsModule } fr
 // Importamos CommonModule para usar directivas comunes como *ngFor y *ngIf
 import { CommonModule } from '@angular/common';
 //import { TablaCompras } from './tabla-compras/tabla-compras';
-import { ListaService } from './tabla-compras/lista_server';
+import { ListaService } from './estudiante/lista_server';
 import { RouterModule, Router } from '@angular/router';
 
 @Component({
@@ -40,10 +40,18 @@ miFormulario: FormGroup;
 
   // MÉTODO: AGREGAR (Crear)
   agregarItem() {
+    // Creamos un nuevo grupo de formulario para el nuevo producto
     const nuevoGrupo = this.fb.group({
-      producto: ['', Validators.required],
-      cantidad: [1, [Validators.required, Validators.min(1)]]
+      Matricula: ['', Validators.required],
+      Alumno: ['', Validators.required],
+      Apellidos: ['', Validators.required],
+      Carrera: ['', Validators.required],
+      FechaNacimiento: ['', Validators.required],
+      Genero: ['', Validators.required],
+      Cuatrimestre: [0, [Validators.required, Validators.min(0)]],
+      Grupo: ['', Validators.required]
     });
+
 
     this.listaItems.push(nuevoGrupo);
   }
@@ -62,6 +70,20 @@ miFormulario: FormGroup;
   this.listaService.actualizarLista(this.listaItems.value);
   // Navegamos a la ruta de la tabla
   this.router.navigate(['/lista']);
+} 
+  indiceEditando: number | null = null;
+  editarItem(indice: number) {
+  this.indiceEditando = indice;
+  const estudiante = this.listaItems.at(indice);
+  console.log("Editando:", estudiante.value);
+  
+}
+  actualizarItem() {
+  if (this.indiceEditando !== null) {
+    const estudiante = this.listaItems.at(this.indiceEditando);
+    estudiante.patchValue(this.miFormulario.value);
+    this.indiceEditando = null;
+  }
 }
 }
  

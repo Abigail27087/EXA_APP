@@ -1,0 +1,68 @@
+<div class="container mt-4"> <!-- Contenedor principal para la tabla de estudiantes -->   
+  <!-- Contenedor principal para la tabla de compras -->
+  <h2 class="text-center">TABLA ESTUDIANTES</h2>
+<!-- Muestra la tabla solo si hay items en la lista,
+  de lo contrario muestra un mensaje -->
+  <table class=" table table-striped table-bordered mt-3" *ngIf="items.length > 0; else listaVacia"> 
+    <!-- Solo muestra la tabla si hay items en la lista -->
+    <thead>
+      <tr><!-- Encabezados de la tabla -->
+        
+        <th>Matricula</th> <!-- Encabezado de la columna para la matricula -->
+        <th>Alumno</th>  <!-- Encabezado de la columna para el nombre del alumno -->
+        <th>Apellidos</th> <!-- Encabezado de la columna para apellidos -->
+        <th>Carrera</th> <!-- Encabezado de la columna para la carrera -->
+        <th>Fecha de Nacimiento</th> <!-- Encabezado de la columna para la fecha de nacimiento -->
+        <th>Genero</th> <!-- Encabezado de la columna para el genero -->  
+        <th>Cuatrimestre</th> <!-- Encabezado de la columna para el cuatrimestre -->
+        <th>Grupo</th> <!-- Encabezado de la columna para el grupo -->
+         <!-- Agrega más encabezados según los datos que quieras mostrar -->
+           <!-- Asegúrate de que los nombres de las columnas coincidan con los datos que estás enviando desde el formulario -->
+           <!-- Puedes agregar más columnas aquí para mostrar otros datos del estudiante -->
+           <!-- Por ejemplo, si quieres mostrar la fecha de nacimiento, puedes agregar: -->
+           <!-- <th>Fecha de Nacimiento</th> -->
+           <!-- Y así sucesivamente para otros campos que quieras mostrar en la tabla -->
+           <!-- Solo asegúrate de que los nombres de las columnas coincidan con los datos que estás enviando desde el formulario para que se muestre correctamente en la tabla -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let it of items"> 
+        <!-- Recorre cada item en la lista y muestra sus datos en la tabla -->
+        <td>{{ it.Matricula }}</td><!-- Muestra el número de matricula del estudiante -->
+        <td>{{ it.Alumno }}</td><!-- Muestra el nombre del alumno -->
+        <td>{{ it.Apellidos }}</td><!-- Muestra los apellidos del estudiante -->
+        <td>{{ it.Carrera }}</td><!-- Muestra la carrera del estudiante -->
+        <td>{{ it.FechaNacimiento }}</td><!-- Muestra la fecha de nacimiento del estudiante -->
+        <td>{{ it.Genero }}</td><!-- Muestra el genero del estudiante -->
+        <td>{{ it.Cuatrimestre }}</td><!-- Muestra el cuatrimestre del    estudiante -->
+        <td>{{ it.Grupo }}</td><!-- Muestra el grupo del estudiante -->
+         <!-- Agrega más columnas según los datos que quieras mostrar -->
+           <!-- Asegúrate de que los nombres de las propiedades coincidan con los datos que estás enviando desde el formulario -->
+           <!-- Puedes agregar más columnas aquí para mostrar otros datos del estudiante -->
+           <!-- Por ejemplo, si quieres mostrar la fecha de nacimiento, puedes agregar: -->
+           <!-- <td>{{ it.FechaNacimiento }}</td> -->
+           <!-- Y así sucesivamente para otros campos que quieras mostrar en la tabla -->
+           <!-- Solo asegúrate de que los nombres de las propiedades coincidan con los datos que estás enviando desde el formulario para que se muestre correctamente en la tabla -->
+            <!-- Recuerda que el formato de la fecha puede necesitar ser ajustado dependiendo de cómo lo estés enviando desde el formulario, puedes usar un pipe para formatear la fecha si es necesario -->
+             <!-- Por ejemplo: {{ it.FechaNacimiento | date:'dd/MM/yyyy' }} para mostrar la fecha en formato día/mes/año -->
+              <!-- Asegúrate de ajustar el formato según tus necesidades y cómo estás enviando los datos desde el formulario para que se muestre correctamente en la tabla -->
+      </tr>
+    </tbody>
+  </table>
+  <!-- Si no hay items, muestra el mensaje definido en el template listaVacia -->
+  <ng-template #listaVacia> <!-- Template para mostrar cuando la lista está vacía -->
+    <!-- Mensaje para cuando la lista está vacía -->
+    <div class="mensaje-vacio">
+      <!-- Muestra un mensaje cuando la lista está vacía -->
+      <p>No hay estudiantes en la lista.</p>
+    </div>
+  </ng-template>
+
+  <br>
+  <!-- Botón para regresar al formulario, 
+   usando routerLink para navegar a la ruta raíz -->
+ <button routerLink="/" class="btn-regresar"> 
+   <!-- Botón para regresar al formulario -->
+  Volver al Formulario
+</button>
+</div>
