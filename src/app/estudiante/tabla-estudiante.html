@@ -15,7 +15,8 @@
         <th>Fecha de Nacimiento</th> <!-- Encabezado de la columna para la fecha de nacimiento -->
         <th>Genero</th> <!-- Encabezado de la columna para el genero -->  
         <th>Cuatrimestre</th> <!-- Encabezado de la columna para el cuatrimestre -->
-        <th>Grupo</th> <!-- Encabezado de la columna para el grupo -->
+        <th>Grupo</th>
+        <th>Acciones</th> <!-- Encabezado de la columna para las acciones -->
          <!-- Agrega más encabezados según los datos que quieras mostrar -->
            <!-- Asegúrate de que los nombres de las columnas coincidan con los datos que estás enviando desde el formulario -->
            <!-- Puedes agregar más columnas aquí para mostrar otros datos del estudiante -->
@@ -36,33 +37,28 @@
         <td>{{ it.Genero }}</td><!-- Muestra el genero del estudiante -->
         <td>{{ it.Cuatrimestre }}</td><!-- Muestra el cuatrimestre del    estudiante -->
         <td>{{ it.Grupo }}</td><!-- Muestra el grupo del estudiante -->
-         <!-- Agrega más columnas según los datos que quieras mostrar -->
-           <!-- Asegúrate de que los nombres de las propiedades coincidan con los datos que estás enviando desde el formulario -->
-           <!-- Puedes agregar más columnas aquí para mostrar otros datos del estudiante -->
-           <!-- Por ejemplo, si quieres mostrar la fecha de nacimiento, puedes agregar: -->
-           <!-- <td>{{ it.FechaNacimiento }}</td> -->
-           <!-- Y así sucesivamente para otros campos que quieras mostrar en la tabla -->
-           <!-- Solo asegúrate de que los nombres de las propiedades coincidan con los datos que estás enviando desde el formulario para que se muestre correctamente en la tabla -->
-            <!-- Recuerda que el formato de la fecha puede necesitar ser ajustado dependiendo de cómo lo estés enviando desde el formulario, puedes usar un pipe para formatear la fecha si es necesario -->
-             <!-- Por ejemplo: {{ it.FechaNacimiento | date:'dd/MM/yyyy' }} para mostrar la fecha en formato día/mes/año -->
-              <!-- Asegúrate de ajustar el formato según tus necesidades y cómo estás enviando los datos desde el formulario para que se muestre correctamente en la tabla -->
+        <td>{{ it.Acciones }}</td><!--Muestra las acciones del estudiante-->
+       
+      <td>
+
+        
+      </td>
       </tr>
+
     </tbody>
+
   </table>
-  <!-- Si no hay items, muestra el mensaje definido en el template listaVacia -->
-  <ng-template #listaVacia> <!-- Template para mostrar cuando la lista está vacía -->
-    <!-- Mensaje para cuando la lista está vacía -->
-    <div class="mensaje-vacio">
-      <!-- Muestra un mensaje cuando la lista está vacía -->
-      <p>No hay estudiantes en la lista.</p>
+
+  <ng-template #listaVacia>
+    <div class="alert alert-info text-center">
+      No hay estudiantes en la lista.
     </div>
   </ng-template>
 
   <br>
-  <!-- Botón para regresar al formulario, 
-   usando routerLink para navegar a la ruta raíz -->
- <button routerLink="/" class="btn-regresar"> 
-   <!-- Botón para regresar al formulario -->
-  Volver al Formulario
-</button>
+
+  <button routerLink="/" class="btn btn-primary">
+    Volver al Formulario
+  </button>
+
 </div>

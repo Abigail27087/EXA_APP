@@ -5,7 +5,7 @@
     <h2>Formulario de Estudiantes</h2>
     <hr class="separador">
     <h3>Estudiantes</h3>
-    <-- Nombre completo del Alumno -->
+    <!-- Nombre completo del Alumno -->
     <div formArrayName="items">
       <!-- Contenedor para el FormArray de productos -->
      <!-- Usamos *ngFor para iterar sobre los controles del FormArray -->
@@ -13,14 +13,14 @@
        nombre y cantidad, y un botón para eliminar -->
        <!-- Agregamos una clase 'item-fila' para estilos -->
       <div *ngFor="let item of listaItems.controls; let i = index" 
-         [formGroupName]="i" 
-           class="item-fila">
+         [formGroupName]="i"]
+          class="row g-2 align-items-center mb-3 border p-3 rounded item-fila">
            <!-- Fila para cada producto con clase para estilos -->
         <!-- Campos para el nombre del producto y la cantidad, 
          con clases para estilos -->
-    
+        <div class="col-md-2">
           <!-- Campo para la matricula con clase para estilos -->
-        <input type="number" formControlName="Matricula" placeholder="Matricula" class="input-Matricula">
+         <input type="number" class="form-control" placeholder="Matricula" ></div>
           <!-- Campo para el nombre del alumno con clase para estilos -->
         <input formControlName="Alumno" placeholder="Nombre del Alumno" class="input-Alumno">
           <!-- Campo para la cantidad del producto con clase para estilos -->
@@ -34,12 +34,18 @@
           <!-- Campo para el genero con clase para estilos -->
         <input type="number" formControlName="Cuatrimestre" placeholder="Cuatrimestre" class="input-Cuatrimestre">
           <!-- Campo para el cuatrimestre con clase para estilos -->
-      
+        
+          <!-- Fila para cada producto con clases para estilos -->
         <input formControlName="Grupo" placeholder="Grupo" class="input-Grupo">
           <!-- Campo para el grupo con clase para estilos -->
+        <input formControlName="Acciones" placeholder="Acciones" class="input-Acciones">
+          <!-- Campo para las acciones con clase para estilos -->
+         
+         <!-- Aquí se muestra un ejemplo básico de cómo podrían verse los botones, pero puedes ajustarlos según tus necesidades y estilo de tu aplicación -->
         <button type="button" (click)="eliminarItem(i)" class="btn-eliminar">
           &times; Eliminar
-        
+        </button>
+        <button type="button" (click)="editarItem(i)" class="btn-editar">
           <!-- Botón para editar el producto, con clase para estilos -->
         </button>
       </div>

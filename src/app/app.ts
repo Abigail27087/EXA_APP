@@ -73,17 +73,30 @@ miFormulario: FormGroup;
 } 
   indiceEditando: number | null = null;
   editarItem(indice: number) {
+
   this.indiceEditando = indice;
+
   const estudiante = this.listaItems.at(indice);
+
+  this.miFormulario.patchValue({
+    nombreLista: this.miFormulario.value.nombreLista
+  });
+
   console.log("Editando:", estudiante.value);
-  
 }
   actualizarItem() {
+
   if (this.indiceEditando !== null) {
+
     const estudiante = this.listaItems.at(this.indiceEditando);
-    estudiante.patchValue(this.miFormulario.value);
+
+    estudiante.patchValue(estudiante.value);
+
     this.indiceEditando = null;
+
   }
+
 }
-}
+  }
+
  

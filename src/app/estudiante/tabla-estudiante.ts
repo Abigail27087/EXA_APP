@@ -29,6 +29,15 @@ ngOnInit() {// Método que se ejecuta al inicializar el componente
     // Imprime la lista en la consola para verificar 
     // que se recibió correctamente
   }
+  editarItem(index: number) {
+    console.log('Editar estudiante:', index);
+  }
+  actualizarItem(index: number, nuevoValor: any) {
+    console.log('Actualizar estudiante :', index, 'con nuevo valor:', nuevoValor);
+  }
+  eliminarItem(index: number) {
+    console.log('Eliminar estudiante:', index);
+  }
 }
 export  interface estudiante {
   Matricula: number;
